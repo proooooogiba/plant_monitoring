@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/ipogiba/esp/plant_monitoring_project/build/CMakeFiles/bootloader
+/Users/ipogiba/esp/plant_monitoring_project/build/CMakeFiles/bootloader.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/CMakeFiles/bootloader-complete.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/ipogiba/esp/plant_monitoring_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
