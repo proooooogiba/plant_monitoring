@@ -371,6 +371,41 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# MQTT Configuration
+#
+CONFIG_BROKER_URL="mqtt://esp32_smartMeter:password@scotty-the-fifth.fritz.box:1883"
+# end of MQTT Configuration
+
+#
+# UART Configuration
+#
+CONFIG_ENV_GPIO_RANGE_MIN=0
+CONFIG_ENV_GPIO_RANGE_MAX=39
+CONFIG_ENV_GPIO_IN_RANGE_MAX=39
+CONFIG_ENV_GPIO_OUT_RANGE_MAX=33
+CONFIG_UART_PORT_NUM=2
+CONFIG_UART_BAUD_RATE=9600
+CONFIG_UART_RXD=5
+CONFIG_UART_TXD=4
+# end of UART Configuration
+
+#
+# Wifi Configuration
+#
+CONFIG_ESP_WIFI_SSID="–––––––––—"
+CONFIG_ESP_WIFI_PASSWORD="skazhinetnaturalam"
+CONFIG_ESP_MAXIMUM_RETRY=5
+# CONFIG_ESP_WIFI_AUTH_OPEN is not set
+# CONFIG_ESP_WIFI_AUTH_WEP is not set
+# CONFIG_ESP_WIFI_AUTH_WPA_PSK is not set
+CONFIG_ESP_WIFI_AUTH_WPA2_PSK=y
+# CONFIG_ESP_WIFI_AUTH_WPA_WPA2_PSK is not set
+# CONFIG_ESP_WIFI_AUTH_WPA3_PSK is not set
+# CONFIG_ESP_WIFI_AUTH_WPA2_WPA3_PSK is not set
+# CONFIG_ESP_WIFI_AUTH_WAPI_PSK is not set
+# end of Wifi Configuration
+
+#
 # Compiler options
 #
 CONFIG_COMPILER_OPTIMIZATION_DEBUG=y

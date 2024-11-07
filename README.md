@@ -6,11 +6,19 @@
 - [Введение в ESP-IDF(RUS)](https://www.youtube.com/watch?v=CDBqYCwWD0c&t=1133s)
 - [Введение в ESP-IDF(ENG)](https://www.youtube.com/watch?v=1o9zASOxZaQ)
 
-Команда для запуска отладки:
+![process_of_developmnet](imgs/what-you-need.png)
 
+Команда для запуска отладки:
 ```shell
 cd ~/esp/esp-idf && . ./export.sh && cd ~/esp/plant_monitoring_project && idf.py monitor
 ```
+
+Station mode(STA) - режим работы, при котором устройство ESP32 подключается к существующей сети Wi-Fi, 
+функционируя как клиент. В этом режиме ESP32 не создает свою собственную сеть, 
+а вместо этого использует доступ к уже имеющейся точке доступа (например, роутеру) для 
+обмена данными с другими устройствами в сети.
+
+idf.py -p 1220 flash monitor - загрузка + отладка порт можно увидеть подлючив плату esp и написав команду.
 
 Фреймворк esp-idf установлен в пути: `~/esp`
 

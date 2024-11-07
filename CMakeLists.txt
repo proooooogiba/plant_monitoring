@@ -6,4 +6,4 @@ cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 set(EXTRA_COMPONENT_DIRS /Users/ipogiba/esp/plant_monitoring_project/esp-idf-lib/components)
-project(main)
+project(plant-monitoring)

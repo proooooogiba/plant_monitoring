@@ -1,7 +1,7 @@
 idf_component_register(
-        SRCS "main.c"
-        SRCS "Libs/gpio/gpio_user.c"
+        SRCS "main.cpp"
+        SRCS "internal/gpio/container.cpp"
 
-        INCLUDE_DIRS "Libs"
-        INCLUDE_DIRS "Libs/gpio"
+        INCLUDE_DIRS "internal"
+        INCLUDE_DIRS "internal/gpio"
 )
