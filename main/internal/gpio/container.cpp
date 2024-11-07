@@ -85,7 +85,7 @@ _Noreturn void run() {
     // Initialize NVS
     initWifiWithNvs();
 
-    // auto mqtt_client = std::make_unique<MQTTClient>("esp32/smartMeter/");
+    auto mqtt_client = std::make_unique<MQTTClient>("esp32/plant_monitoring/");
     SensorContainer container;
     float temperature, humidity, distance;
 
@@ -96,6 +96,7 @@ _Noreturn void run() {
 
         printf("Humidity: %.1f%% Temp: %.1fC\n", humidity, temperature);
         printf("Distance: %.4f m\n", distance);
+        mqtt_client->publish("esp32-plant-monitoring-metrics", "ya-ya");
 
         // If you read the sensor data too often, it will heat up
         vTaskDelay(pdMS_TO_TICKS(2000));
