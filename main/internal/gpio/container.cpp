@@ -27,54 +27,60 @@
 #define EXAMPLE_ADC1_CHAN0 ADC_CHANNEL_4
 #define EXAMPLE_ADC1_CHAN1 ADC_CHANNEL_5
 
-
 const auto DHT_TAG = "DHT sensor";
 const auto ULTRASONIC_TAG = "ULTRASONIC sensor";
 const auto LIGHT_TAG = "LIGHT sensor";
 
 SensorContainer::SensorContainer() {
     // Initialize DHT11
-    configGpio();
+    config_gpio();
 
     // Initialize HC_SR04
-    ultrasonicSensor = {
+    ultrasonic_sensor = {
         .trigger_pin = HC_SR04_TRIGGER,
         .echo_pin = HC_SR04_ECHO,
     };
 
-    auto ultrasonicInitErr = ultrasonic_init(&ultrasonicSensor);
+    auto ultrasonicInitErr = ultrasonic_init(&ultrasonic_sensor);
     if (ultrasonicInitErr != ESP_OK) {
           ESP_LOGE(ULTRASONIC_TAG, "ultrasonic_init failed %s", esp_err_to_name(ultrasonicInitErr));
     }
+
+    // init mqtt_client
+    mqtt_client = std::make_unique<MQTTClient>("esp32/plant_monitoring/");
+
+    // Initialize NVS
+    init_wifi_with_nvs();
+
+    auto mqtt_client = std::make_unique<MQTTClient>("esp32/plant_monitoring/");
 }
 
-void SensorContainer::readGpioSensors(float &temperature, float &humidity, float &distance)
-{
+void SensorContainer::read_gpio_sensors(float &temperature, float &humidity, float &distance) const {
     // Read DHT11 data
     if (auto dhtEspErr = dht_read_float_data(SENSOR_TYPE, DATA_DHT_GPIO, &humidity, &temperature); dhtEspErr != ESP_OK) {
         ESP_LOGE(DHT_TAG, "DHT read error: %s", esp_err_to_name(dhtEspErr));
     }
 
     // Read Ultrasonic sensor data
-    if (auto res = ultrasonic_measure_temp_compensated(&ultrasonicSensor, MAX_DISTANCE_CM, &distance, temperature)) {
+    if (auto res = ultrasonic_measure_temp_compensated(&ultrasonic_sensor, MAX_DISTANCE_CM, &distance, temperature)) {
         ESP_LOGE(DHT_TAG, "HC-SR-04 read error: %s", esp_err_to_name(res));
     };
 }
 
-float SensorContainer::readLux() {
-    return readLuxFromAcd(TEMT6000_PIN);
+float SensorContainer::read_lux() {
+    return read_lux_from_acd(TEMT6000_PIN);
 }
 
-void SensorContainer::configGpio() {
+void SensorContainer::config_gpio() {
     gpio_set_pull_mode(DATA_DHT_GPIO, GPIO_PULLUP_ONLY);
 }
 
-void SensorContainer::configAdc() {
+void SensorContainer::config_adc() {
     adc1_config_width(ADC_WIDTH_BIT_10);
     adc1_config_channel_atten(TEMT6000_PIN, ADC_ATTEN_DB_0);
 }
 
-float SensorContainer::readLuxFromAcd(const adc1_channel_t channel) {
+float SensorContainer::read_lux_from_acd(const adc1_channel_t channel) {
     const int adcValue = adc1_get_raw(channel);
     const float voltage = adcValue * (TEMT6000_POWER_VOLTAGE / 1024); // Convert ADC value to voltage
     const float lux = (voltage / 10000.0) * 2000000.0; // Convert voltage to lux
@@ -83,30 +89,26 @@ float SensorContainer::readLuxFromAcd(const adc1_channel_t channel) {
 
 _Noreturn void run()
 {
-    // Initialize NVS
-    initWifiWithNvs();
-
-    auto mqtt_client = std::make_unique<MQTTClient>("esp32/plant_monitoring/");
-    SensorContainer container;
+    const SensorContainer container;
     float temperature, humidity, distance;
 
     while (true) {
-        const float lux = container.readLux();
+        const float lux = SensorContainer::read_lux();
         printf("Lux: %.1f\n", lux);
 
-        container.readGpioSensors(temperature, humidity, distance);
+        container.read_gpio_sensors(temperature, humidity, distance);
 
-        printf("Humidity: %.1f%% Temp: %.1fC\n", humidity, temperature);
-        printf("Distance: %.4f m\n", distance);
-        const auto metrics = marshalMetricsToJSON(temperature, humidity, lux, distance);
-        mqtt_client->publish("metrics", metrics);
+        printf("Humidity: %.1f%% Temp: %.1fC Distance: %.4f m\n", humidity, temperature, distance);
+        const auto metrics = marshal_metrics_to_json(temperature, humidity, lux, distance);
+        container.mqtt_client->publish("metrics", metrics);
 
         // If you read the sensor data too often, it will heat up
         vTaskDelay(pdMS_TO_TICKS(10000));
     }
 }
 
-std::string marshalMetricsToJSON(float temperature, float humidity, float lux, float distance)
+std::string marshal_metrics_to_json(const float temperature, const float humidity,
+                                 const float lux, const float distance)
 {
     cJSON *root = cJSON_CreateObject();
     cJSON_AddNumberToObject(root, "temperature", temperature);
@@ -116,7 +118,7 @@ std::string marshalMetricsToJSON(float temperature, float humidity, float lux, f
     return cJSON_Print(root);
 }
 
-void initWifiWithNvs() {
+void init_wifi_with_nvs() {
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES ||
         ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
