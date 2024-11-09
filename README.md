@@ -8,11 +8,17 @@
 
 ![process_of_developmnet](imgs/what-you-need.png)
 
+При разработке в CLion локальные конфиги Kconfig.projbuild - не импортируются в настройки автоматически. 
+Процесс разработки идёт через sdkconfig и их нужно переносить самостоятельно.
+
 Команда для запуска отладки:
 ```shell
 cd ~/esp/esp-idf && . ./export.sh && cd ~/esp/plant_monitoring_project && idf.py monitor
 ```
 
+```shell
+mosquitto_pub -L mqtt://vm4481772.25ssd.had.wf:1883/esp32/plant_monitoring/metrics -m "{\"temperature\":26.25,\"humydity\":46.37}"
+```
 Station mode(STA) - режим работы, при котором устройство ESP32 подключается к существующей сети Wi-Fi, 
 функционируя как клиент. В этом режиме ESP32 не создает свою собственную сеть, 
 а вместо этого использует доступ к уже имеющейся точке доступа (например, роутеру) для 

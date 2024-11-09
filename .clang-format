@@ -12,7 +12,7 @@ CompactNamespaces: 'false'
 ConstructorInitializerAllOnOneLineOrOnePerLine: 'false'
 ConstructorInitializerIndentWidth: '4'
 FixNamespaceComments: 'true'
-IndentWidth: '2'
+IndentWidth: '4'
 Language: Cpp
 NamespaceIndentation: None
 PenaltyBreakAssignment: '0'

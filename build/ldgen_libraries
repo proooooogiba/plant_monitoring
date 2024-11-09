@@ -154,6 +154,4 @@
 /Users/ipogiba/esp/plant_monitoring_project/build/esp-idf/veml7700/libveml7700.a
 /Users/ipogiba/esp/plant_monitoring_project/build/esp-idf/wiegand/libwiegand.a
 /Users/ipogiba/esp/plant_monitoring_project/build/esp-idf/mqtt-connection/libmqtt-connection.a
-/Users/ipogiba/esp/plant_monitoring_project/build/esp-idf/sml-parser/libsml-parser.a
-/Users/ipogiba/esp/plant_monitoring_project/build/esp-idf/uart-communication/libuart-communication.a
 /Users/ipogiba/esp/plant_monitoring_project/build/esp-idf/wifi-connection/libwifi-connection.a

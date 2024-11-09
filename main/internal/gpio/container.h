@@ -9,6 +9,8 @@
 // extern "C" {
 // #endif
 
+#include <string>
+
 #include "driver/adc.h"
 #include "ultrasonic.h"
 
@@ -35,5 +37,6 @@ private:
 
 void initWifiWithNvs();
 _Noreturn void run();
+std::string marshalMetricsToJSON(float temperature, float humidity, float lux, float distance);
 
 #endif // SENSOR_CONTAINER_H

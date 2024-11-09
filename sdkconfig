@@ -373,21 +373,8 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # MQTT Configuration
 #
-CONFIG_BROKER_URL="mqtt://esp32_smartMeter:password@scotty-the-fifth.fritz.box:1883"
+CONFIG_BROKER_URL="mqtt://vm4481772.25ssd.had.wf:1883"
 # end of MQTT Configuration
-
-#
-# UART Configuration
-#
-CONFIG_ENV_GPIO_RANGE_MIN=0
-CONFIG_ENV_GPIO_RANGE_MAX=39
-CONFIG_ENV_GPIO_IN_RANGE_MAX=39
-CONFIG_ENV_GPIO_OUT_RANGE_MAX=33
-CONFIG_UART_PORT_NUM=2
-CONFIG_UART_BAUD_RATE=9600
-CONFIG_UART_RXD=5
-CONFIG_UART_TXD=4
-# end of UART Configuration
 
 #
 # Wifi Configuration

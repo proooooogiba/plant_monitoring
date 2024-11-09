@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  mosquitto-exporter:
+    image: sapcc/mosquitto-exporter
+    environment:
+      - "BROKER_ENDPOINT=mqtt://vm4481772.25ssd.had.wf:1883"
+      - MQTT_USER=""
+      - MQTT_PASS=""
+    restart: unless-stopped
+
+  mqtt-exporter:
+    image: kpetrem/mqtt-exporter
+    ports:
+      - "9000:9000"
+    environment:
+      - MQTT_ADDRESS=vm4481772.25ssd.had.wf
+      - MQTT_TOPIC=esp32/plant_monitoring/metrics
+      - PROMETHEUS_PREFIX=sensor_
+      - TOPIC_LABEL=sensor
+    restart: unless-stopped
+
+  prometheus:
+    volumes:
+      - ./config/prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+
+  alertmanager:
+    image: prom/alertmanager
+    volumes:
+      - ./config/alertmanager/:/etc/alertmanager/
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - "--web.external-url=https://alertmanager.local"
+    ports:
+      - "9093:9093"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./config/grafana/datasources:/etc/grafana/datasources
+      - ./config/grafana/dashboards:/etc/grafana/dashboards
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  prometheus_data:
+  grafana_data:
