@@ -65,8 +65,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 5,
+        "h": 11,
+        "w": 6,
         "x": 0,
         "y": 0
       },
@@ -152,9 +152,9 @@
         ]
       },
       "gridPos": {
-        "h": 8,
-        "w": 5,
-        "x": 5,
+        "h": 11,
+        "w": 6,
+        "x": 6,
         "y": 0
       },
       "id": 2,
@@ -199,6 +199,92 @@
         "type": "prometheus",
         "uid": "de3eqrusq720wf"
       },
+      "description": "Высота растения",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "lengthm"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Height"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 11
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "sensor_distance",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "Height",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Height",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "de3eqrusq720wf"
+      },
       "description": "Освещенность растения",
       "fieldConfig": {
         "defaults": {
@@ -236,10 +322,10 @@
         ]
       },
       "gridPos": {
-        "h": 8,
-        "w": 5,
-        "x": 10,
-        "y": 0
+        "h": 10,
+        "w": 6,
+        "x": 6,
+        "y": 11
       },
       "id": 3,
       "options": {
@@ -277,76 +363,6 @@
       ],
       "title": "Lux",
       "type": "gauge"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "de3eqrusq720wf"
-      },
-      "description": "Высота растения",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "lengthm"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 5,
-        "x": 0,
-        "y": 8
-      },
-      "id": 4,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.3.0",
-      "targets": [
-        {
-          "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "sensor_distance",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "legendFormat": "Height",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
-        }
-      ],
-      "title": "Height",
-      "type": "stat"
     },
     {
       "datasource": {
@@ -423,10 +439,10 @@
         ]
       },
       "gridPos": {
-        "h": 9,
+        "h": 11,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 21
       },
       "id": 5,
       "options": {
@@ -524,13 +540,13 @@
     "list": []
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-15m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Plant monitoring",
+  "title": "Plant-monitoring",
   "uid": "ce3f4anwhavpce",
-  "version": 33,
+  "version": 35,
   "weekStart": ""
 }

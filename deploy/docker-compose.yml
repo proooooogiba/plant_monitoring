@@ -21,6 +21,7 @@ services:
     restart: unless-stopped
 
   prometheus:
+    image: prom/prometheus
     volumes:
       - ./config/prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus

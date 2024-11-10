@@ -41,3 +41,6 @@ idf.py -p 1220 flash monitor - загрузка + отладка порт мож
 
 
 
+Доступ к системе мониторинга-аналитики:
+- [grafana](http://vm4481772.25ssd.had.wf:3000/d/ce3f4anwhavpce/plant-monitoring?from=now-15m&to=now&timezone=browser)
+- [prometheus](http://vm4481772.25ssd.had.wf:9090/graph?g0.expr=sensor_temprature&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h)
