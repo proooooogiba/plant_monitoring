@@ -25,8 +25,3 @@
 esp_err_t Ultrasonic::read_data(float &distance, const float &tempreature) const {
      return ultrasonic_measure_temp_compensated(&ultrasonic_sensor, MAX_DISTANCE_CM, &distance, tempreature);
  }
-
-
-
-
-// ultrasonic_sensor_t ultrasonic_sensor{}; // Instance of the Ultrasonic sensor

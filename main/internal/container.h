@@ -6,6 +6,7 @@
 #define SENSOR_CONTAINER_H
 
 #include <hc-sr04.h>
+#include <temt6000.h>
 
 #include <memory>
 #include <mqtt.hh>
@@ -13,7 +14,6 @@
 
 #include "dht11.h"
 #include "driver/adc.h"
-#include "ultrasonic.h"
 
 class SensorContainer {
 public:
@@ -27,6 +27,7 @@ public:
     std::unique_ptr<MQTTClient> mqtt_client;
     std::unique_ptr<DHT11> dht11;
     std::unique_ptr<Ultrasonic> hc_sr04;
+    std::unique_ptr<Temt6000> temt6000;
 private:
     // Private methods for configuration
     static void config_adc();
