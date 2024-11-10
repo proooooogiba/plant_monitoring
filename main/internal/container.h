@@ -5,14 +5,13 @@
 #ifndef SENSOR_CONTAINER_H
 #define SENSOR_CONTAINER_H
 
-// #ifdef __cplusplus
-// extern "C" {
-// #endif
+#include <hc-sr04.h>
 
 #include <memory>
 #include <mqtt.hh>
 #include <string>
 
+#include "dht11.h"
 #include "driver/adc.h"
 #include "ultrasonic.h"
 
@@ -26,11 +25,10 @@ public:
     static float read_lux();
 
     std::unique_ptr<MQTTClient> mqtt_client;
+    std::unique_ptr<DHT11> dht11;
+    std::unique_ptr<Ultrasonic> hc_sr04;
 private:
-    ultrasonic_sensor_t ultrasonic_sensor{}; // Instance of the ultrasonic sensor
-
     // Private methods for configuration
-    static void config_dht11_gpio(gpio_num_t gpio_num);
     static void config_adc();
     static void init_wifi_with_nvs();
 

@@ -12,7 +12,6 @@
 #include "esp_log.h"
 #include "mqtt_client.h"
 #include "nvs_flash.h"
-#include "ultrasonic.h"
 
 #define BLINK_GPIO GPIO_NUM_2
 #define HC_SR04_ECHO GPIO_NUM_16
@@ -21,53 +20,31 @@
 #define TEMT6000_PIN ADC1_CHANNEL_0
 #define TEMT6000_POWER_VOLTAGE 3.3
 #define MAX_DISTANCE_CM 400
-#define SENSOR_TYPE DHT_TYPE_DHT11
 #define TEMT6000_POWER_VOLTAGE 3.3
+#define DHT_GPIO_DATA GPIO_NUM_4
 
-const auto DHT_TAG = "DHT sensor";
-const auto ULTRASONIC_TAG = "ULTRASONIC sensor";
 const auto LIGHT_TAG = "LIGHT sensor";
 
 SensorContainer::SensorContainer() {
-    // Init DHT11
-    config_dht11_gpio(DATA_DHT_GPIO);
-
-    // Initialize HC_SR04
-    ultrasonic_sensor = {
-        .trigger_pin = HC_SR04_TRIGGER,
-        .echo_pin = HC_SR04_ECHO,
-    };
-
-    if (const auto ultrasonicInitErr = ultrasonic_init(&ultrasonic_sensor);
-        ultrasonicInitErr != ESP_OK) {
-        ESP_LOGE(ULTRASONIC_TAG, "ultrasonic_init failed %s", esp_err_to_name(ultrasonicInitErr));
-    }
-
-    // Create mqtt_client
-    mqtt_client = std::make_unique<MQTTClient>("esp32/plant_monitoring/");
-
-    // Init NVS
     init_wifi_with_nvs();
+
+    dht11 = std::make_unique<DHT11>(DHT_GPIO_DATA);
+    hc_sr04 = std::make_unique<Ultrasonic>(HC_SR04_TRIGGER, HC_SR04_ECHO);
+    mqtt_client = std::make_unique<MQTTClient>("esp32/plant_monitoring/");
 }
 
 void SensorContainer::read_gpio_sensors(float &temperature, float &humidity, float &distance) const {
-    // Read DHT11 data
-    if (const auto dhtEspErr = dht_read_float_data(SENSOR_TYPE, DATA_DHT_GPIO, &humidity, &temperature); dhtEspErr != ESP_OK) {
-        ESP_LOGE(DHT_TAG, "DHT read error: %s", esp_err_to_name(dhtEspErr));
+    if (const auto dht_esp_err = dht11->read_data(temperature, humidity); dht_esp_err != ESP_OK) {
+        ESP_LOGE(DHT_TAG, "DHT read error: %s", esp_err_to_name(dht_esp_err));
     }
 
-    // Read Ultrasonic sensor data
-    if (const auto res = ultrasonic_measure_temp_compensated(&ultrasonic_sensor, MAX_DISTANCE_CM, &distance, temperature)) {
-        ESP_LOGE(DHT_TAG, "HC-SR-04 read error: %s", esp_err_to_name(res));
+    if (const auto ultrasonic_esp_err = hc_sr04->read_data(distance, temperature); ultrasonic_esp_err != ESP_OK) {
+        ESP_LOGE(DHT_TAG, "HC-SR-04 read error: %s", esp_err_to_name(ultrasonic_esp_err));
     };
 }
 
 float SensorContainer::read_lux() {
     return read_lux_from_acd(TEMT6000_PIN);
-}
-
-void SensorContainer::config_dht11_gpio(gpio_num_t gpio_num) {
-    gpio_set_pull_mode(gpio_num, GPIO_PULLUP_ONLY);
 }
 
 void SensorContainer::config_adc() {
