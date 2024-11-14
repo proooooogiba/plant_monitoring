@@ -16,7 +16,11 @@
 cd ~/esp/esp-idf && . ./export.sh && cd ~/esp/plant_monitoring_project && idf.py monitor
 ```
 
-Пример отправки метрик mqtt-брокеру без авторизации:
+Пример отправки метрик mqtt-брокеру без авторизации в формате JSON:
+
+host = vm4481772.25ssd.had.wf:1883
+mqtt_topic = esp32/plant_monitoring/metrics
+
 ```shell
 mosquitto_pub -L mqtt://vm4481772.25ssd.had.wf:1883/esp32/plant_monitoring/metrics -m "{\"temperature\":26.25,\"humidity\":46.37}"
 ```
@@ -26,6 +30,10 @@ Station mode(STA) - режим работы, при котором устрой�
 обмена данными с другими устройствами в сети.
 
 idf.py -p 1220 flash monitor - загрузка + отладка порт можно увидеть подлючив плату esp и написав команду.
+
+
+
+## Примечания
 
 Фреймворк esp-idf установлен в пути: `~/esp`
 
@@ -38,8 +46,6 @@ idf.py -p 1220 flash monitor - загрузка + отладка порт мож
 [Библиотеки](https://github.com/UncleRus/esp-idf-lib) esp-idf
 
 - [Настройка](https://github.com/UncleRus/esp-idf-lib/tree/master/examples/dht/default) dht-драйвера
-
-
 
 Доступ к системе мониторинга-аналитики:
 - [grafana](http://vm4481772.25ssd.had.wf:3000/d/ce3f4anwhavpce/plant-monitoring?from=now-15m&to=now&timezone=browser)

@@ -8,7 +8,6 @@
 #include <soc/gpio_num.h>
 
 #define SENSOR_TYPE DHT_TYPE_DHT11
-#define DATA_DHT_GPIO GPIO_NUM_4
 const auto DHT_TAG = "DHT sensor";
 
 class DHT11 {

@@ -13,7 +13,7 @@ const auto ULTRASONIC_TAG = "ULTRASONIC sensor";
 
 class Ultrasonic {
 public:
-     Ultrasonic(gpio_num_t hc_sr04_echo, gpio_num_t hc_sr04_trigger);
+     Ultrasonic(gpio_num_t hc_sr04_echo = GPIO_NUM_16, gpio_num_t hc_sr04_trigger = GPIO_NUM_17);
      esp_err_t read_data(float &distance, const float &tempreature) const;
 
 private:

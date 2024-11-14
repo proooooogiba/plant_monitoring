@@ -6,8 +6,6 @@
 
 #include <esp_log.h>
 #include <ultrasonic.h>
-#define HC_SR04_ECHO GPIO_NUM_16
-#define HC_SR04_TRIGGER GPIO_NUM_17
 #define MAX_DISTANCE_CM 400
 
  Ultrasonic::Ultrasonic(gpio_num_t hc_sr04_trigger, gpio_num_t hc_sr04_echo) {
@@ -23,5 +21,10 @@
 }
 
 esp_err_t Ultrasonic::read_data(float &distance, const float &tempreature) const {
-     return ultrasonic_measure_temp_compensated(&ultrasonic_sensor, MAX_DISTANCE_CM, &distance, tempreature);
+     if (const auto read_err = ultrasonic_measure_temp_compensated(&ultrasonic_sensor, MAX_DISTANCE_CM, &distance, tempreature); read_err != ESP_OK) {
+         return read_err;
+     }
+     // так как это расстояние датчик -> объект -> датчик, то делим на 2
+     distance /= 2;
+     return ESP_OK;
  }
