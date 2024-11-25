@@ -15,16 +15,105 @@
       }
     ]
   },
+  "description": "Дэшборд комнатного растения",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "de3eqrusq720wf"
+        "uid": "ae3ifl3tz318gc"
+      },
+      "description": "Температура в комнате",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "displayName": "Оценка состояния растения",
+          "fieldMinMax": false,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "purple",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              },
+              {
+                "color": "orange",
+                "value": 30
+              },
+              {
+                "color": "yellow",
+                "value": 50
+              },
+              {
+                "color": "green",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 7,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ae3ifl3tz318gc"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "(\n    (avg_over_time(sensor_temperature[5m]) - 20) / (25 - 20) +\n    (avg_over_time(sensor_humidity[5m]) - 40) / (60 - 40) +\n    (avg_over_time(sensor_soil_moisture[5m]) - 30) / (50 - 30) +\n    (avg_over_time(sensor_lux[5m]) - 200) / (800 - 200)\n) / 4\n * 100",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Общая оценка",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ae3ifl3tz318gc"
       },
       "description": "Температура в комнате",
       "fieldConfig": {
@@ -65,9 +154,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 11,
+        "h": 6,
         "w": 6,
-        "x": 0,
+        "x": 12,
         "y": 0
       },
       "id": 1,
@@ -93,10 +182,10 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "de3eqrusq720wf"
+            "uid": "ae3ifl3tz318gc"
           },
           "disableTextWrap": false,
-          "editorMode": "code",
+          "editorMode": "builder",
           "expr": "sensor_temperature",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -106,15 +195,102 @@
           "useBackend": false
         }
       ],
-      "title": "Tempreature",
+      "title": "Температура",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "de3eqrusq720wf"
+        "uid": "ae3ifl3tz318gc"
       },
-      "description": "Влfжность в комнате",
+      "description": "Освещенность растения",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "lux"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_lux"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sensor_lux",
+          "format": "time_series",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Освещённость",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ae3ifl3tz318gc"
+      },
+      "description": "Влажность в комнате",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -122,6 +298,7 @@
           },
           "decimals": 2,
           "mappings": [],
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -152,12 +329,12 @@
         ]
       },
       "gridPos": {
-        "h": 11,
+        "h": 6,
         "w": 6,
-        "x": 6,
-        "y": 0
+        "x": 12,
+        "y": 6
       },
-      "id": 2,
+      "id": 6,
       "options": {
         "colorMode": "value",
         "graphMode": "area",
@@ -181,7 +358,7 @@
           "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sensor_humidity",
+          "expr": "sensor_soil_moisture - 20",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -191,13 +368,13 @@
           "useBackend": false
         }
       ],
-      "title": "Humidity",
+      "title": "Влажность почвы",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "de3eqrusq720wf"
+        "uid": "ae3ifl3tz318gc"
       },
       "description": "Высота растения",
       "fieldConfig": {
@@ -242,7 +419,7 @@
       "gridPos": {
         "h": 10,
         "w": 6,
-        "x": 0,
+        "x": 18,
         "y": 11
       },
       "id": 4,
@@ -277,20 +454,21 @@
           "useBackend": false
         }
       ],
-      "title": "Height",
+      "title": "Рост",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "de3eqrusq720wf"
+        "uid": "ae3ifl3tz318gc"
       },
-      "description": "Освещенность растения",
+      "description": "Влажность в комнате",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
+          "decimals": 2,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -301,19 +479,19 @@
               }
             ]
           },
-          "unit": "lux"
+          "unit": "humidity"
         },
         "overrides": [
           {
             "matcher": {
               "id": "byName",
-              "options": "lux"
+              "options": "sensor_humidity"
             },
             "properties": [
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "yellow",
+                  "fixedColor": "blue",
                   "mode": "fixed"
                 }
               }
@@ -322,16 +500,18 @@
         ]
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 6,
-        "x": 6,
-        "y": 11
+        "x": 12,
+        "y": 12
       },
-      "id": 3,
+      "id": 2,
       "options": {
-        "minVizHeight": 75,
-        "minVizWidth": 75,
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -339,35 +519,118 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "sizing": "auto"
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
       "pluginVersion": "11.3.0",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
+          "editorMode": "code",
           "exemplar": false,
-          "expr": "sensor_lux",
+          "expr": "sensor_humidity",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "lux",
+          "legendFormat": "__auto",
           "range": true,
           "refId": "A",
           "useBackend": false
         }
       ],
-      "title": "Lux",
-      "type": "gauge"
+      "title": "Влажность воздуха",
+      "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "de3eqrusq720wf"
+        "uid": "ae3ifl3tz318gc"
+      },
+      "description": "-",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "calculate": false,
+        "cellGap": 1,
+        "color": {
+          "exponent": 0.5,
+          "fill": "dark-orange",
+          "max": 1,
+          "min": 0,
+          "mode": "scheme",
+          "reverse": true,
+          "scale": "exponential",
+          "scheme": "RdYlGn",
+          "steps": 4
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": false
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "tooltip": {
+          "mode": "single",
+          "showColorScale": false,
+          "yHistogram": false
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": false
+        }
+      },
+      "pluginVersion": "11.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "ae3ifl3tz318gc"
+          },
+          "disableTextWrap": false,
+          "editorMode": "code",
+          "expr": "1",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Алерты метрик",
+      "type": "heatmap"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "ae3ifl3tz318gc"
       },
       "fieldConfig": {
         "defaults": {
@@ -480,7 +743,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "de3eqrusq720wf"
+            "uid": "ae3ifl3tz318gc"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -497,7 +760,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "de3eqrusq720wf"
+            "uid": "ae3ifl3tz318gc"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -529,13 +792,15 @@
           "useBackend": false
         }
       ],
-      "title": "All metrics",
+      "title": "Динамика всех метрик во времени",
       "type": "timeseries"
     }
   ],
   "preload": false,
   "schemaVersion": 40,
-  "tags": [],
+  "tags": [
+    "#plant_monitoring"
+  ],
   "templating": {
     "list": []
   },
@@ -547,6 +812,6 @@
   "timezone": "browser",
   "title": "Plant-monitoring",
   "uid": "ce3f4anwhavpce",
-  "version": 35,
+  "version": 41,
   "weekStart": ""
 }

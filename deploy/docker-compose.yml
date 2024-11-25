@@ -1,14 +1,6 @@
 version: "3"
 
 services:
-  mosquitto-exporter:
-    image: sapcc/mosquitto-exporter
-    environment:
-      - "BROKER_ENDPOINT=mqtt://vm4481772.25ssd.had.wf:1883"
-      - MQTT_USER=""
-      - MQTT_PASS=""
-    restart: unless-stopped
-
   mqtt-exporter:
     image: kpetrem/mqtt-exporter
     ports:
@@ -28,6 +20,7 @@ services:
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
+      - "--storage.tsdb.retention.time=10d"
     ports:
       - "9090:9090"
     restart: unless-stopped

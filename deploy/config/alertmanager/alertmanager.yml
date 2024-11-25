@@ -1,12 +1,18 @@
 route:
-  receiver: 'slack'
-  group_by: ['...']
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 1m
+  repeat_interval: 1m
+  receiver: 'telegram'
 
 receivers:
-  - name: 'slack'
-    slack_configs:
-      - send_resolved: true
-        text: "{{ .CommonAnnotations.description }}"
-        username: 'CHANGEME'
-        channel: 'CHANGEME'
-        api_url: 'https://hooks.slack.com/services/CHANGEME'
+  - name: 'telegram'
+    telegram_configs:
+    - chat_id: "your_chat_id"
+      bot_token: "your_bot_token"
+      send_resolved: true
+      parse_mode: 'HTML'
+      message: '{{ template "telegram.message". }}'
+
+templates:
+  - './message_templates/telegram.tmpl' # path to our telegram.tmpl
