@@ -1,0 +1,7 @@
+(
+    (avg_over_time(sensor_temperature[5m]) - 20) / (25 - 20) +
+    (avg_over_time(sensor_humidity[5m]) - 40) / (60 - 40) +
+    (avg_over_time(sensor_soil_moisture[5m]) - 30) / (50 - 30) +
+    (avg_over_time(sensor_lux[5m]) - 200) / (800 - 200)
+) / 4
+ * 100
