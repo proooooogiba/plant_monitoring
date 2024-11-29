@@ -1,0 +1,7 @@
+- alert: critical_temprature
+expr: '(sensor_temperature > 40 or sensor_temperature < 10)'
+for: 20m
+labels:
+    severity: notification-critical
+annotations:
+    description: "Temperature out of range for 20 minutes: {{ $labels.sensor }}"
