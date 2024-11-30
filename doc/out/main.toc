@@ -1,0 +1,86 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{РЕФЕРАТ}{2}{chapter*.2}%
+\contentsline {chapter}{ОБОЗНАЧЕНИЯ И СОКРАЩЕНИЯ}{3}{chapter*.3}%
+\contentsline {chapter}{ВВЕДЕНИЕ}{6}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Конструкторская часть}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Анализ требований}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Архитекутра проекта}{9}{section.1.2}%
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1.3}Дифференцированная оценка состояния растения}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Проектирование функциональной схемы}{11}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Организация блока Wi-Fi модуля в ESP32}{11}{subsection.1.4.1}%
+\contentsline {subsubsection}{Режим работы STA}{12}{subsubsection*.9}%
+\contentsline {subsubsection}{Режим работы AP}{13}{subsubsection*.10}%
+\contentsline {subsection}{\numberline {1.4.2}Распределение портов}{13}{subsection.1.4.2}%
+\contentsline {subsubsection}{Классификация выводов}{14}{subsubsection*.12}%
+\contentsline {subsubsection}{Назначение выводов}{15}{subsubsection*.13}%
+\contentsline {subsection}{\numberline {1.4.3}Описание датчика влажности и темературы воздуха DHT-11}{15}{subsection.1.4.3}%
+\contentsline {subsubsection}{Внутреннее устройство}{15}{subsubsection*.14}%
+\contentsline {subsubsection}{Принцип работы}{16}{subsubsection*.15}%
+\contentsline {subsection}{\numberline {1.4.4}Описание ультразвукового датчика HC-SR04}{16}{subsection.1.4.4}%
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {subsubsection}{Внутреннее устройство}{16}{subsubsection*.16}%
+\contentsline {subsubsection}{Принцип работы}{17}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {1.4.5}Описание датчика влажности почвы YL-69}{17}{subsection.1.4.5}%
+\babel@toc {american}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {subsubsection}{Внутреннее устройство}{17}{subsubsection*.18}%
+\contentsline {subsubsection}{Принцип работы}{18}{subsubsection*.19}%
+\contentsline {subsection}{\numberline {1.4.6}Описание датчика TEMT6000}{18}{subsection.1.4.6}%
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {subsubsection}{Внутреннее устройство}{18}{subsubsection*.20}%
+\contentsline {subsubsection}{Принцип работы}{19}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {1.4.7}Функциональная схема}{19}{subsection.1.4.7}%
+\contentsline {section}{\numberline {1.5}Проектирование принципиальной схемы}{20}{section.1.5}%
+\contentsline {subsubsection}{Разъем программатора}{20}{subsubsection*.23}%
+\contentsline {subsubsection}{Подключение цепи питания}{21}{subsubsection*.24}%
+\contentsline {subsubsection}{Расчет потребляемой мощности}{22}{subsubsection*.25}%
+\contentsline {subsubsection}{Построение принципиальной схемы}{22}{subsubsection*.27}%
+\contentsline {section}{\numberline {1.6}Описание алгоритмов основных программных процедур}{24}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Главная процедура программы}{24}{subsection.1.6.1}%
+\contentsline {chapter}{\numberline {2}Технологическая часть}{25}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Моделирование и отладка системы на макетной плате}{25}{section.2.1}%
+\babel@toc {american}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {2.2}Разработка серверной части системы мониторинга}{28}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}MQTT-брокер}{28}{subsection.2.2.1}%
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {subsubsection}{Установка}{28}{subsubsection*.33}%
+\contentsline {subsubsection}{Отправка сообщений}{28}{subsubsection*.34}%
+\contentsline {subsubsection}{Клиент MQTT}{29}{subsubsection*.35}%
+\babel@toc {american}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Деплой приложения}{29}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Prometheus}{30}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Grafana}{30}{subsection.2.2.4}%
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {subsection}{\numberline {2.2.5}AlertManager}{32}{subsection.2.2.5}%
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{ЗАКЛЮЧЕНИЕ}{34}{chapter*.40}%
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {american}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {american}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {american}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}{36}{chapter*.41}%
+\contentsline {chapter}{ПРИЛОЖЕНИЕ \numberline {\CYRA }}{37}{appendix.1.A}%
+\contentsline {chapter}{ПРИЛОЖЕНИЕ \numberline {\CYRB }}{66}{appendix.1.B}%

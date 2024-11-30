@@ -1,0 +1,9 @@
+This is METAFONT, Version 2.71828182 (preloaded base=mf 2024.11.25)  28 NOV 2024 20:32
+**\mode:=ljfour; mag:=1; ; nonstopmode; input nullfont
+
+! Emergency stop.
+<*> ...four; mag:=1; ; nonstopmode; input nullfont
+                                                  
+*** (job aborted, file error in nonstop mode)
+
+

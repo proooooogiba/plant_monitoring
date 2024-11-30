@@ -1,0 +1,411 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{MQTTStandardIoT}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{{{MQTT}} - {{The Standard}} for {{IoT Messaging}}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/QLJY3CGV/mqtt.org.html
+      \endverb
+      \verb{urlraw}
+      \verb https://mqtt.org/
+      \endverb
+      \verb{url}
+      \verb https://mqtt.org/
+      \endverb
+    \endentry
+    \entry{KpetremannMqttexporterSimple}{online}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Kpetremann/Mqtt-Exporter: {{Simple}} Generic {{MQTT Prometheus}} Exporter for {{IoT}} Working out of the Box}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/kpetremann/mqtt-exporter
+      \endverb
+      \verb{url}
+      \verb https://github.com/kpetremann/mqtt-exporter
+      \endverb
+    \endentry
+    \entry{OverviewPrometheus}{online}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{title}{Overview | {{Prometheus}}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://prometheus.io/docs/introduction/overview/
+      \endverb
+      \verb{url}
+      \verb https://prometheus.io/docs/introduction/overview/
+      \endverb
+    \endentry
+    \entry{GrafanaOSSEnterprise}{online}{}
+      \list{organization}{1}{%
+        {Grafana Labs}%
+      }
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Find answers to your technical questions and learn how to use Grafana OSS and Enterprise products.}
+      \field{langid}{english}
+      \field{title}{Grafana {{OSS}} and {{Enterprise}} | {{Grafana}} Documentation}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/X6364DAV/latest.html
+      \endverb
+      \verb{urlraw}
+      \verb https://grafana.com/docs/grafana/latest/
+      \endverb
+      \verb{url}
+      \verb https://grafana.com/docs/grafana/latest/
+      \endverb
+    \endentry
+    \entry{DHT11TemperatureHumiditySensor}{online}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{title}{{{DHT11 Temperature-Humidity Sensor}}, {{Датчик}} Температуры и Влажности На Базе {{DHT11}}, Цифровой Выход, {{Waveshare}} | Купить в Розницу и Оптом}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/JT9F734X/temperature-humidity-sensor.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.chipdip.ru/product/temperature-humidity-sensor
+      \endverb
+      \verb{url}
+      \verb https://www.chipdip.ru/product/temperature-humidity-sensor
+      \endverb
+    \endentry
+    \entry{UltrazvukovoyDalnomerHCSR04}{online}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Ультразвуковой дальномер HC-SR04 определяет расстояние до объектов по отражённому звуковому сигналу. Описание, характеристики, цена и фото на сайте.}
+      \field{langid}{russian}
+      \field{title}{Ультразвуковой дальномер HC-SR04}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://amperka.ru/product/hc-sr04-ultrasonic-sensor-distance-module
+      \endverb
+      \verb{url}
+      \verb https://amperka.ru/product/hc-sr04-ultrasonic-sensor-distance-module
+      \endverb
+    \endentry
+    \entry{GuideSoilMoisture2016}{online}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The soil moisture sensor or the hygrometer is usually used to detect the humidity of the soil. So, it is perfect to build an automatic watering system}
+      \field{day}{14}
+      \field{hour}{11}
+      \field{langid}{american}
+      \field{minute}{56}
+      \field{month}{7}
+      \field{second}{3}
+      \field{timezone}{Z}
+      \field{title}{Guide for {{Soil Moisture Sensor YL-69}} or {{HL-69}} with the {{Arduino}} | {{Random Nerd Tutorials}}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://randomnerdtutorials.com/guide-for-soil-moisture-sensor-yl-69-or-hl-69-with-the-arduino/
+      \endverb
+      \verb{url}
+      \verb https://randomnerdtutorials.com/guide-for-soil-moisture-sensor-yl-69-or-hl-69-with-the-arduino/
+      \endverb
+    \endentry
+    \entry{adminDatchikOsveshchennostiTEMT60002022}{online}{}
+      \name{author}{1}{}{%
+        {{hash=21232f297a57a5a743894a0e4a801fc3}{%
+           family={{admin}},
+           familyi={a\bibinitperiod}}}%
+      }
+      \strng{namehash}{21232f297a57a5a743894a0e4a801fc3}
+      \strng{fullhash}{21232f297a57a5a743894a0e4a801fc3}
+      \strng{bibnamehash}{21232f297a57a5a743894a0e4a801fc3}
+      \strng{authorbibnamehash}{21232f297a57a5a743894a0e4a801fc3}
+      \strng{authornamehash}{21232f297a57a5a743894a0e4a801fc3}
+      \strng{authorfullhash}{21232f297a57a5a743894a0e4a801fc3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{langid}{russian}
+      \field{month}{8}
+      \field{title}{Датчик освещенности TEMT6000 | arduinoLab}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/DASXZ6DJ/datchik-osveshhennosti-temt6000.html
+      \endverb
+      \verb{urlraw}
+      \verb https://arduinolab.pw/index.php/2022/08/19/datchik-osveshhennosti-temt6000/
+      \endverb
+      \verb{url}
+      \verb https://arduinolab.pw/index.php/2022/08/19/datchik-osveshhennosti-temt6000/
+      \endverb
+    \endentry
+    \entry{ESPIDFCLion}{online}{}
+      \list{organization}{1}{%
+        {CLion Help}%
+      }
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labeltitlesource}{title}
+      \field{langid}{american}
+      \field{title}{{{ESP-IDF}} | {{CLion}}}
+      \field{urlday}{23}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/W9GSLU2H/esp-idf.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jetbrains.com/help/clion/esp-idf.html
+      \endverb
+      \verb{url}
+      \verb https://www.jetbrains.com/help/clion/esp-idf.html
+      \endverb
+    \endentry
+    \entry{GetStartedESP32}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Get Started - {{ESP32}} - — {{ESP-IDF}} Programming Guide v5.2.3 Documentation}
+      \field{urlday}{22}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/YV8W7W4N/index.html
+      \endverb
+      \verb{urlraw}
+      \verb https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html
+      \endverb
+      \verb{url}
+      \verb https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html
+      \endverb
+    \endentry
+    \entry{ndunguInstallMosquittoMQTT}{online}{}
+      \name{author}{1}{}{%
+        {{hash=32b274fa49edce2b9aa40eb2a31f485c}{%
+           family={Ndungu},
+           familyi={N\bibinitperiod},
+           given={Francis},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{32b274fa49edce2b9aa40eb2a31f485c}
+      \strng{fullhash}{32b274fa49edce2b9aa40eb2a31f485c}
+      \strng{bibnamehash}{32b274fa49edce2b9aa40eb2a31f485c}
+      \strng{authorbibnamehash}{32b274fa49edce2b9aa40eb2a31f485c}
+      \strng{authornamehash}{32b274fa49edce2b9aa40eb2a31f485c}
+      \strng{authorfullhash}{32b274fa49edce2b9aa40eb2a31f485c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Install {{Mosquitto MQTT Broker On Ubuntu}} 20.04 {{Server}} | {{Vultr Docs}}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/34NFPCNR/install-mosquitto-mqtt-broker-on-ubuntu-20-04-server.html
+      \endverb
+      \verb{urlraw}
+      \verb https://docs.vultr.com/install-mosquitto-mqtt-broker-on-ubuntu-20-04-server
+      \endverb
+      \verb{url}
+      \verb https://docs.vultr.com/install-mosquitto-mqtt-broker-on-ubuntu-20-04-server
+      \endverb
+    \endentry
+    \entry{nordquistMQTTExplorer}{online}{}
+      \name{author}{1}{}{%
+        {{hash=b849e9ded1a6061e3a08ebb9711f11c3}{%
+           family={Nordquist},
+           familyi={N\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {MQTT Explorer}%
+      }
+      \strng{namehash}{b849e9ded1a6061e3a08ebb9711f11c3}
+      \strng{fullhash}{b849e9ded1a6061e3a08ebb9711f11c3}
+      \strng{bibnamehash}{b849e9ded1a6061e3a08ebb9711f11c3}
+      \strng{authorbibnamehash}{b849e9ded1a6061e3a08ebb9711f11c3}
+      \strng{authornamehash}{b849e9ded1a6061e3a08ebb9711f11c3}
+      \strng{authorfullhash}{b849e9ded1a6061e3a08ebb9711f11c3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An all-round MQTT client that provides a structured topic overview}
+      \field{langid}{american}
+      \field{title}{{{MQTT Explorer}}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/X3RMPKKQ/mqtt-explorer.com.html
+      \endverb
+      \verb{urlraw}
+      \verb http://mqtt-explorer.com/
+      \endverb
+      \verb{url}
+      \verb http://mqtt-explorer.com/
+      \endverb
+    \endentry
+    \entry{styopaChtoTakoePromQL2023}{online}{}
+      \name{author}{1}{}{%
+        {{hash=dcb01a96300972656dff7d921a172175}{%
+           family={Стёпа},
+           familyi={С\bibinitperiod},
+           given={Миронов},
+           giveni={М\bibinitperiod}}}%
+      }
+      \strng{namehash}{dcb01a96300972656dff7d921a172175}
+      \strng{fullhash}{dcb01a96300972656dff7d921a172175}
+      \strng{bibnamehash}{dcb01a96300972656dff7d921a172175}
+      \strng{authorbibnamehash}{dcb01a96300972656dff7d921a172175}
+      \strng{authornamehash}{dcb01a96300972656dff7d921a172175}
+      \strng{authorfullhash}{dcb01a96300972656dff7d921a172175}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{В этом гайде мы погрузимся в основы языка запросов Prometheus Query Language (PromQL), разберем его синтаксис и научимся составлять эффективные запросы для мониторинга и анализа данных.}
+      \field{day}{7}
+      \field{hour}{12}
+      \field{langid}{russian}
+      \field{minute}{46}
+      \field{month}{12}
+      \field{second}{2}
+      \field{timezone}{+03\bibtzminsep 00}
+      \field{title}{Что такое PromQL и как с ним работать}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/2WWQBPG3/chto-takoe-promql-i-kak-s-nim-rabotat.html
+      \endverb
+      \verb{urlraw}
+      \verb https://timeweb.com/ru/community/articles/chto-takoe-promql-i-kak-s-nim-rabotat
+      \endverb
+      \verb{url}
+      \verb https://timeweb.com/ru/community/articles/chto-takoe-promql-i-kak-s-nim-rabotat
+      \endverb
+    \endentry
+    \entry{TelegramMessageTemplate}{online}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{title}{Telegram Message Template for {{Alertmanager}} \& How to Add It to Your Receiver in Alertmanager.Yml}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/QLRKTXBV/7641275a42243d3667b3146c5402be40.html
+      \endverb
+      \verb{urlraw}
+      \verb https://gist.github.com/sanchpet/7641275a42243d3667b3146c5402be40
+      \endverb
+      \verb{url}
+      \verb https://gist.github.com/sanchpet/7641275a42243d3667b3146c5402be40
+      \endverb
+    \endentry
+    \entry{262588213843476HowGetTelegram}{online}{}
+      \name{author}{1}{}{%
+        {{hash=296e96dc0d51c18dd440a994a23b85e2}{%
+           family={262588213843476},
+           familyi={2\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Gist}%
+      }
+      \strng{namehash}{296e96dc0d51c18dd440a994a23b85e2}
+      \strng{fullhash}{296e96dc0d51c18dd440a994a23b85e2}
+      \strng{bibnamehash}{296e96dc0d51c18dd440a994a23b85e2}
+      \strng{authorbibnamehash}{296e96dc0d51c18dd440a994a23b85e2}
+      \strng{authornamehash}{296e96dc0d51c18dd440a994a23b85e2}
+      \strng{authorfullhash}{296e96dc0d51c18dd440a994a23b85e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{How to get Telegram Bot Chat ID. GitHub Gist: instantly share code, notes, and snippets.}
+      \field{langid}{english}
+      \field{title}{How to Get {{Telegram Bot Chat ID}}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Users/ipogiba/Zotero/storage/5FFJSTUX/4ad622f344cd1dc3bb1ecbe468ff9f8a.html
+      \endverb
+      \verb{urlraw}
+      \verb https://gist.github.com/nafiesl/4ad622f344cd1dc3bb1ecbe468ff9f8a
+      \endverb
+      \verb{url}
+      \verb https://gist.github.com/nafiesl/4ad622f344cd1dc3bb1ecbe468ff9f8a
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
