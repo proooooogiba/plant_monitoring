@@ -1,5 +1,7 @@
 # Система мониторинга состояния комнатного растением
 
+![workplace.png](imgs/workplace.png)
+
 ### Тулчейн
 
 Для разработки проекта использовался фреймворк idf-esp в IDE CLion.
@@ -117,10 +119,12 @@ eval "$COMMAND"
 
 Дэшборд графаны выглядит следующим образом:
 
+![grafana_dashboard.png](imgs/grafana_dashboard.png)
+
+
 Доступ к системе мониторинга датчиков:
 - [grafana](http://vm4481772.25ssd.had.wf:3000/d/ce3f4anwhavpce/plant-monitoring?from=now-15m&to=now&timezone=browser)
 - [prometheus](http://vm4481772.25ssd.had.wf:9090/graph?g0.expr=sensor_temprature&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h)
 - [alertmanager](http://vm4481772.25ssd.had.wf:9093/#/alerts)
-
 
 [РПЗ](doc/out/main.pdf)
